@@ -10,19 +10,24 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
+import { Github, Globe } from 'lucide-react';
 
 interface ProjectCardProps {
 	title: string;
 	description: string;
 	technologies: string[];
-	link: string;
+	slug: string;
+	githubUrl?: string;
+	liveUrl?: string;
 }
 
 export default function ProjectCard({
 	title,
 	description,
 	technologies,
-	link,
+	slug,
+	githubUrl,
+	liveUrl,
 }: ProjectCardProps) {
 	return (
 		<motion.div
@@ -45,15 +50,33 @@ export default function ProjectCard({
 							</Badge>
 						))}
 					</div>
-					<div className='mt-auto'>
+					<div className='mt-auto flex gap-4 items-center'>
 						<Link
-							href={link}
+							href={`/projects/${slug}`}
 							className='text-primary hover:underline'
-							target='_blank'
-							rel='noopener noreferrer'
 						>
-							View Project
+							View Details
 						</Link>
+						{githubUrl && (
+							<Link
+								href={githubUrl}
+								className='text-muted-foreground hover:text-primary'
+								target='_blank'
+								rel='noopener noreferrer'
+							>
+								<Github className='h-5 w-5' />
+							</Link>
+						)}
+						{liveUrl && (
+							<Link
+								href={liveUrl}
+								className='text-muted-foreground hover:text-primary'
+								target='_blank'
+								rel='noopener noreferrer'
+							>
+								<Globe className='h-5 w-5' />
+							</Link>
+						)}
 					</div>
 				</CardContent>
 			</Card>

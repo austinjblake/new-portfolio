@@ -10,28 +10,10 @@ const navItems = [
 ];
 
 export default function Header({
-	setActiveTab,
+	scrollToSection,
 }: {
-	setActiveTab: (tab: string) => void;
+	scrollToSection: (section: string) => void;
 }) {
-	const scrollToSection = (section: string) => {
-		const element = document.getElementById(section);
-		if (element) {
-			if (section === 'projects' || section === 'blog') {
-				setActiveTab(section);
-			}
-			const headerOffset = 80;
-			const elementPosition = element.getBoundingClientRect().top;
-			const offsetPosition =
-				elementPosition + window.pageYOffset - headerOffset;
-
-			window.scrollTo({
-				top: offsetPosition,
-				behavior: 'smooth',
-			});
-		}
-	};
-
 	return (
 		<header className='sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
 			<div className='container mx-auto px-4 py-4 flex justify-between items-center'>

@@ -17,6 +17,9 @@ const projects = {
 				'Static SPA to select game components for Heroes of the Grid. Optimized for mobile and quick loading times.',
 			technologies: ['React', 'Vite', 'Netlify'],
 			link: 'https://github.com/yourusername/ecommerce-platform',
+			slug: 'ranger-randomizer',
+			githubUrl: 'https://github.com/austinjblake/ranger-randomizer',
+			liveUrl: 'https://www.rangerrandomizer.com/',
 		},
 		{
 			title: 'Rangers United',
@@ -30,6 +33,9 @@ const projects = {
 				'Postgis',
 			],
 			link: 'https://github.com/yourusername/task-management-app',
+			slug: 'rangers-united',
+			githubUrl: 'https://github.com/austinjblake/rangers-united',
+			liveUrl: 'https://www.rangersunited.com/',
 		},
 	],
 	ai: [
@@ -38,6 +44,7 @@ const projects = {
 			description: 'Coming Soon',
 			technologies: [],
 			link: '',
+			slug: '',
 		},
 	],
 	crypto: [
@@ -46,6 +53,7 @@ const projects = {
 			description: 'Coming Soon',
 			technologies: [],
 			link: '',
+			slug: '',
 		},
 	],
 };
@@ -69,9 +77,41 @@ export default function Home() {
 		setMounted(true);
 	}, []);
 
+	const scrollToSection = (section: string) => {
+		const element = document.getElementById('projects-and-blog');
+		if (element) {
+			if (section === 'projects' || section === 'blog') {
+				setActiveTab(section);
+				const headerOffset = 80;
+				const elementPosition = element.getBoundingClientRect().top;
+				const offsetPosition =
+					elementPosition + window.pageYOffset - headerOffset;
+
+				window.scrollTo({
+					top: offsetPosition,
+					behavior: 'smooth',
+				});
+				return;
+			}
+		}
+
+		const sectionElement = document.getElementById(section);
+		if (sectionElement) {
+			const headerOffset = 80;
+			const elementPosition = sectionElement.getBoundingClientRect().top;
+			const offsetPosition =
+				elementPosition + window.pageYOffset - headerOffset;
+
+			window.scrollTo({
+				top: offsetPosition,
+				behavior: 'smooth',
+			});
+		}
+	};
+
 	return (
 		<div className='flex flex-col min-h-screen'>
-			<Header setActiveTab={setActiveTab} />
+			<Header scrollToSection={scrollToSection} />
 			<main className='flex-grow container mx-auto px-4 py-8'>
 				<div
 					id='home'
