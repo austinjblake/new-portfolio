@@ -171,30 +171,29 @@ export default function Home() {
 					<h2 className='text-3xl font-bold mb-4'>About Me</h2>
 					<div className='grid gap-6 md:grid-cols-2'>
 						<div>
+							<p className='mb-4'>I build things for the web.</p>
 							<p className='mb-4'>
-								Hi, I&apos;m [Your Name], a passionate software engineer with
-								expertise in JavaScript, TypeScript, React, Node.js, and
-								Next.js. I have a deep interest in web development, artificial
-								intelligence, and blockchain technology.
+								My tools of choice are JavaScript, TypeScript, React, Node.js,
+								and Next.js, but I&apos;m always learning something new.
+								I&apos;ve worked on everything from frontends for crypto
+								projects and small business websites to real-time apps and
+								geolocation features for board game fans.
 							</p>
 							<p className='mb-4'>
-								With over [X] years of experience in the tech industry,
-								I&apos;ve had the opportunity to work on a wide range of
-								projects, from building scalable web applications to developing
-								cutting-edge AI solutions and decentralized systems.
+								I like solving tricky problems, making stuff that people
+								actually want to use, and occasionally starting projects that
+								inevitably grow wildly beyond their original scope.
 							</p>
 						</div>
 						<div>
 							<p className='mb-4'>
-								My goal is to create innovative and user-friendly solutions that
-								make a positive impact on people&apos;s lives. When I&apos;m not
-								coding, you can find me exploring new technologies, contributing
-								to open-source projects, or writing articles on my blog to share
-								my knowledge with the developer community.
+								When I&apos;m not coding, I&apos;m probably reading up on new
+								tech, playing board games, or farming (yes, you read that
+								right).
 							</p>
 							<p className='mb-4'>
-								Feel free to explore my projects and blog posts, or get in touch
-								if you&apos;d like to collaborate on an exciting new venture!
+								Take a look at my work, or let&apos;s chat about what
+								you&apos;re building!
 							</p>
 							<div className='flex space-x-4 mt-6'>
 								<Link
@@ -216,7 +215,7 @@ export default function Home() {
 									<span className='sr-only'>LinkedIn</span>
 								</Link>
 								<Link
-									href='mailto:contact@austinjblake.dev'
+									href='mailto:ajblake2189@gmail.com' //change after squarespace fix
 									className='text-primary hover:text-primary-dark'
 								>
 									<Mail className='w-6 h-6' />
