@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import { ThemeProvider } from '../components/ThemeProvider';
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
 					rel='stylesheet'
 					href='https://unpkg.com/framer-motion@5.0.0/dist/framer-motion.css'
 				/>
+				<Analytics />
 			</head>
 			<body className={`${inter.className} min-h-screen flex flex-col`}>
 				<ThemeProvider attribute='class' defaultTheme='system' enableSystem>
