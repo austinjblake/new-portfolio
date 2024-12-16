@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import ProjectCard from '../components/ProjectCard';
@@ -69,6 +69,14 @@ const blogPosts = [
 ];
 
 export default function Home() {
+	return (
+		<Suspense fallback={<div>Loading...</div>}>
+			<HomeContent />
+		</Suspense>
+	);
+}
+
+function HomeContent() {
 	const [activeTab, setActiveTab] = useState('projects');
 	const [activeProjectType, setActiveProjectType] = useState('webdev');
 	const [mounted, setMounted] = useState(false);
