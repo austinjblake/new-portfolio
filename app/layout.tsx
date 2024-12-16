@@ -1,6 +1,7 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 import Footer from '../components/Footer';
+import Header from '../components/Header';
 import { ThemeProvider } from '../components/ThemeProvider';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -26,9 +27,14 @@ export default function RootLayout({
 			</head>
 			<body className={`${inter.className} min-h-screen flex flex-col`}>
 				<ThemeProvider attribute='class' defaultTheme='system' enableSystem>
-					<main className='flex-grow container mx-auto px-4 py-8'>
-						{children}
-					</main>
+					<Header />
+					<div className='flex-grow'>
+						<div className='container mx-auto px-4 py-8'>
+							<div className='flex flex-col items-center justify-center min-h-[calc(100vh-theme(spacing.16))]'>
+								{children}
+							</div>
+						</div>
+					</div>
 					<Footer />
 				</ThemeProvider>
 			</body>
