@@ -8,7 +8,7 @@ import { Analytics } from '@vercel/analytics/react';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-	title: 'Your Name - Software Engineer',
+	title: 'Austin Blake - Software Engineer',
 	description:
 		'Personal portfolio and blog of a software engineer specializing in JavaScript, React, Node.js, AI, and crypto.',
 };
